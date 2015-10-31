@@ -9,4 +9,4 @@ var api = {
 	}
 }
 
-exports.api = api;
+module.exports = api;
