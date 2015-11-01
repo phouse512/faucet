@@ -4,7 +4,7 @@ var api = require('../library/api');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  console.log(api.testing());
+  console.log(api.getUsers());
   res.render('users/list');
 });
 
