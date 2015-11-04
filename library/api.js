@@ -13,17 +13,14 @@ var api = {
 		var completeUrl = this.vars.baseUrl + url;
 		request(completeUrl, function(error, response, body){
 			if (!error && response.statusCode == 200){
-			    callback(response, body);
+			    allback(response, body);
             } else {
                 callback(response, body);
             }
 		});
 	},
-	getUsers: function() {
-		response = this.baseRequest('users/', {}, function(response, body){
-            console.log(body);
-            return response;
-        });
+	getUsers: function(callback) {
+		this.baseRequest('users/', {}, callback);
 	}
 }
 

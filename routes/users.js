@@ -4,8 +4,9 @@ var api = require('../library/api');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  console.log(api.getUsers());
-  res.render('users/list');
+  api.getUsers(function(response, body){ 
+    res.render('users/list');
+  });
 });
 
 module.exports = router;
