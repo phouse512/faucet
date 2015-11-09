@@ -11,7 +11,7 @@ var oauth2 = require('simple-oauth2')({
 });
 
 var authorization_uri = oauth2.authCode.authorizeURL({
-    redirect_uri: 'http://localhost:3000/github/callback',
+    redirect_uri: 'http://107.170.14.18:3000/github/callback',
     scope: 'repo,user',
     state: secrets['development']['githubState']
 });
