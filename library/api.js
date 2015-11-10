@@ -21,7 +21,13 @@ var api = {
 	},
 	getUsers: function(callback) {
 		this.baseRequest('users/', {}, callback);
-	}
+	},
+    saveGithubToken: function(accessToken, userId, callback) {
+        var completeUrl = this.vars.baseUrl + url;
+        request.post({ url: completeUrl, accessToken: accessToken, userId: userId }, function(error, response, body) {
+
+        }
+    }
 }
 
 module.exports = api;

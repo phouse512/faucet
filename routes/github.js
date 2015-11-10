@@ -25,7 +25,7 @@ router.get('/callback', function (req, res) {
   console.log('/callback');
   oauth2.authCode.getToken({
     code: code,
-    redirect_uri: 'http://localhost:3000/callback'
+    redirect_uri: 'http://107.170.14.18:3000/github/callback'
   }, saveToken);
 
   function saveToken(error, result) {
