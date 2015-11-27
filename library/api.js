@@ -25,8 +25,8 @@ var api = {
     saveGithubToken: function(accessToken, userId, callback) {
         var completeUrl = this.vars.baseUrl + url;
         request.post({ url: completeUrl, accessToken: accessToken, userId: userId }, function(error, response, body) {
-
-        }
+           console.log(body); 
+        });
     }
 }
 
