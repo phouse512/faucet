@@ -20,7 +20,7 @@ router.get('/auth', function(req, res, next) {
     res.redirect(authorization_uri);
 });
 
-router.get('/callback', function (req, res) {
+router.get('/callback', function (req, res, next) {
   var code = req.query.code;
   console.log('/callback');
   oauth2.authCode.getToken({
@@ -31,6 +31,7 @@ router.get('/callback', function (req, res) {
   function saveToken(error, result) {
     if (error) { console.log('Access Token Error', error.message); }
     token = oauth2.accessToken.create(result);
+    console.log(token);
   }
 });
 
