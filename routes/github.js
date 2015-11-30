@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var URI = require('urijs');
 
 var secrets = require('../secrets');
 var oauth2 = require('simple-oauth2')({
@@ -31,7 +32,8 @@ router.get('/callback', function (req, res, next) {
   function saveToken(error, result) {
     if (error) { console.log('Access Token Error', error.message); }
     token = oauth2.accessToken.create(result);
-    console.log(token.token);
+    params = URI(token.token).query(true);
+    console.log(params.access_token);
   }
 });
 
