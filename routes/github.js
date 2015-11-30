@@ -32,7 +32,9 @@ router.get('/callback', function (req, res, next) {
   function saveToken(error, result) {
     if (error) { console.log('Access Token Error', error.message); }
     token = oauth2.accessToken.create(result);
-    params = URI(token.token).query(true);
+    console.log(token);
+    params = URI(token.token).query(true);i
+    console.log(params);
     console.log(params.access_token);
   }
 });
