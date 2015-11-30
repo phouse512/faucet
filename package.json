@@ -16,6 +16,7 @@
     "morgan": "~1.5.1",
     "request": "^2.65.0",
     "serve-favicon": "~2.2.0",
-    "simple-oauth2": "^0.2.1"
+    "simple-oauth2": "^0.2.1",
+    "urijs": "^1.17.0"
   }
 }

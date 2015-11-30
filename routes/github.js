@@ -33,8 +33,8 @@ router.get('/callback', function (req, res, next) {
     if (error) { console.log('Access Token Error', error.message); }
     token = oauth2.accessToken.create(result);
     console.log(token);
-    params = URI(token.token).query(true);i
-    console.log(params);
+    urlToParse = 'http://google.com?' + token.token;
+    params = URI(urlToParse).query(true);
     console.log(params.access_token);
   }
 });
