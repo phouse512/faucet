@@ -36,6 +36,7 @@ router.get('/callback', function (req, res, next) {
     urlToParse = 'http://google.com?' + token.token;
     params = URI(urlToParse).query(true);
     console.log(params.access_token);
+    res.render(params);
   }
 });
 
