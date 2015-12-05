@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var URI = require('urijs');
+var api = require('../library/api');
 
 var secrets = require('../secrets');
 var oauth2 = require('simple-oauth2')({
@@ -36,6 +37,14 @@ router.get('/callback', function (req, res, next) {
     urlToParse = 'http://google.com?' + token.token;
     params = URI(urlToParse).query(true);
     console.log(params.access_token);
+    
+    // temporarily set user id for pheel hows
+    var userId = 1;
+
+    api.saveGithubToken(params.access_token, userId, function(response, body) {
+        res.send(body);
+    });
+
     res.send(params);
   }
 });
