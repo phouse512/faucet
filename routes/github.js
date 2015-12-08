@@ -44,8 +44,6 @@ router.get('/callback', function (req, res, next) {
     api.saveGithubToken(params.access_token, userId, function(response, body) {
         res.send(body);
     });
-
-    res.send(params);
   }
 });
 

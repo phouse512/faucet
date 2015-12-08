@@ -4,7 +4,7 @@ var async = require('async');
 
 var api = {
 	vars: {
-		baseUrl: 'http://localhost:8000/'
+		baseUrl: 'http://piper.phizzle.space/';
 	},
 	testing: function() {
 		return this.vars.baseUrl;
@@ -23,9 +23,10 @@ var api = {
 		this.baseRequest('users/', {}, callback);
 	},
     saveGithubToken: function(accessToken, userId, callback) {
-        var completeUrl = this.vars.baseUrl + url;
+        var completeUrl = this.vars.baseUrl + 'github/connect';
         request.post({ url: completeUrl, accessToken: accessToken, userId: userId }, function(error, response, body) {
-           console.log(body); 
+           console.log(body);
+           callback(response, body);
         });
     }
 }
