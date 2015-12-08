@@ -1,1 +1,10 @@
-<h3>Registered Users:<h3>
+<h3>Registered Users:</h3>
+<h5>{{users[0]}}</h5>
+<ul class="list-group">
+{{#each users}}
+    <li class="list-group-item">
+    {{this}}
+    </li>
+
+{{/each}}
+</ul>
