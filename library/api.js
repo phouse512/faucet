@@ -4,7 +4,7 @@ var async = require('async');
 
 var api = {
 	vars: {
-		baseUrl: 'http://piper.phizzle.space/';
+                  baseUrl: 'http://piper.phizzle.space/'
 	},
 	testing: function() {
 		return this.vars.baseUrl;
