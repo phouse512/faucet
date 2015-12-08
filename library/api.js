@@ -13,7 +13,7 @@ var api = {
 		var completeUrl = this.vars.baseUrl + url;
 		request(completeUrl, function(error, response, body){
 			if (!error && response.statusCode == 200){
-			    allback(response, body);
+			    callback(response, body);
             } else {
                 callback(response, body);
             }
