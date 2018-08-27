@@ -1,0 +1,28 @@
+{
+  "name": "faucet",
+  "version": "0.1.0",
+  "description": "user-facing interface for piper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:watch": "webpack --config webpack.dev.config.js -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phouse512/faucet.git"
+  },
+  "keywords": [
+    "es6",
+    "react",
+    "redux"
+  ],
+  "author": "phouse512",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phouse512/faucet/issues"
+  },
+  "homepage": "https://github.com/phouse512/faucet#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
