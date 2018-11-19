@@ -1,34 +1,20 @@
 const path = require('path');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-
-const paths = {
-  DIST: path.resolve(__dirname, 'public'),
-  SRC: path.resolve(__dirname, 'client'),
-};
 
 module.exports = {
-  entry: ['babel-polyfill', path.join(paths.SRC, 'index.jsx')],
+  entry: './src/main.js',
   output: {
-    path: paths.DIST,
-    filename: 'app.bundle.js',
-    publicpath: '/public/',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: './dist',
   },
-  plugins: [],
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: [
-          'babel-loader',
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'css-loader',
-        ],
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: { presets: ["es2015"] },
+        }
       },
       {
         test: /\.scss$/,
@@ -40,22 +26,10 @@ module.exports = {
             loader: 'css-loader',
           },
           {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => {
-                precss,
-                autoprefixer,
-              },
-            },
-          },
-          {
             loader: 'sass-loader',
           },
-        ],
-      },
+        ]
+      }
     ]
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+  }
 };
