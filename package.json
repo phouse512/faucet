@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:watch": "webpack --config webpack.dev.config.js -d --watch",
-    "start": "webpack-dev-server --open --mode development --config ./webpack.dev.config.js",
+    "start": "webpack-dev-server --open --mode development --hot --inline --config ./webpack.dev.config.js",
     "build:prod": "webpack -p"
   },
   "repository": {
@@ -24,7 +24,14 @@
   },
   "homepage": "https://github.com/phouse512/faucet#readme",
   "dependencies": {
+    "babel-preset-react": "^6.24.1",
     "express": "^4.16.3",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
     "webpack-dev-server": "^3.1.10"
   },
   "devDependencies": {
