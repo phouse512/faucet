@@ -10,10 +10,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
+        resolve: {
+          extensions: [".js", ".jsx"],
+        },
         use: {
           loader: 'babel-loader',
-          options: { presets: ["es2015", "react"] },
+          options: { presets: ["es2015", "react", "stage-2"] },
         }
       },
       {
@@ -29,7 +32,21 @@ module.exports = {
             loader: 'sass-loader',
           },
         ]
-      }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'url-loader',
+        options: {
+          limit: 25000,
+        },
+      },
+      {
+        test: /fonts\/.+\.(png|woff|woff2|eot|ttf)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 100000,
+        },
+      },
     ]
   }
 };
