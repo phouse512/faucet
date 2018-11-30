@@ -7,6 +7,6 @@ const login = (state = baseState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default login;

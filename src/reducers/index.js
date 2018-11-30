@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 
+import budget from './budget';
 import login from './login';
 
 const appReducer = combineReducers({
+  budget,
   login,
 });
 

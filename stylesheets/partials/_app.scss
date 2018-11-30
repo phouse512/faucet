@@ -9,7 +9,7 @@ body {
 
 .navbar {
   width: 200px;
-  border-left: 1px solid $grey-dark;
+  border-right: 1px solid $grey-dark;
   padding: 20px;
 
   &__title {
@@ -52,6 +52,8 @@ body {
 }
 
 .main-view {
+  width: 100%;
   flex-grow: 1;
-  background-color: blue;
+  padding: $md-padding;
+  // background-color: blue;
 }

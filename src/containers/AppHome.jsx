@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import BudgetPage from './BudgetPage';
 import Navbar from '../components/Navbar';
 
 export class AppHome extends React.Component {
@@ -14,7 +15,9 @@ export class AppHome extends React.Component {
 
         </Navbar>
         <div className="flex-container main-view">
-        
+          <Switch>
+            <Route path={`${this.props.match.url}/budget`} component={BudgetPage} />
+          </Switch>
         </div>
       </div>
     );
